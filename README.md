@@ -1,1 +1,1 @@
-# mein-abschiede-projekt
+# mein-abschieds-projekt
