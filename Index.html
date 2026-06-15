@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danke für alles & Auf Wiedersehen! 🌌</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div id="custom-heart-cursor">❤️</div>
+
+    <canvas id="matrix-canvas"></canvas>
+
+    <div id="experience-intro">
+        <div class="intro-content">
+            <h1>Ein Blick in die Dunkelheit...</h1>
+            <p>und das Licht, das ihr mir geschenkt habt. Bitte schalte deinen Ton ein.</p>
+            <button class="enter-btn" onclick="startExperience()">✨ Sternenreise starten</button>
+        </div>
+    </div>
+
+    <button class="audio-control" id="music-btn" onclick="toggleMusic()">🎵 Hintergrundmusik AN</button>
+    
+    <audio id="bg-music" loop>
+        <source src="audio/hintergrundmusik.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="sad-music" loop>
+        <source src="audio/trauriger_song.mp3" type="audio/mpeg">
+    </audio>
+
+    <header>
+        <h1>Für immer dankbar für diese Reise ✨</h1>
+        <p>Ein temporärer Abschied voller Hoffnung auf unser Wiedersehen.</p>
+        
+        <nav class="neon-nav">
+            <button class="nav-btn active" id="nav-home" onclick="showSection('home')">🌌 Orbit-Zentrale</button>
+            <button class="nav-btn secret-nav-btn" id="nav-secret" onclick="showSection('secret-log')" style="display: none;">✨ Bonus: Dankbarkeit</button>
+            <button class="nav-btn" onclick="showSection('wissen')">📚 Wissens-Archiv</button>
+            <button class="nav-btn" onclick="showSection('route')">🚀 Galaktische Route</button>
+            <button class="nav-btn" onclick="showSection('story')">🤍 Meine Geschichte</button>
+            <button class="nav-btn" onclick="showSection('team')">👥 Die ChaosCrew</button>
+            <button class="nav-btn" onclick="showSection('cinema')">🎬 Unsere Momente</button>
+            <button class="nav-btn" onclick="showSection('guestbook')">📌 Eure Spuren</button>
+            <button class="nav-btn" onclick="showSection('tools')">⏳ Countdown</button>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <section id="home" class="active">
+            <h2>Willkommen im Cockpit unseres gemeinsamen Erfolgs! 🚀✨</h2>
+            
+            <p class="emotional-quote" style="background: rgba(0, 243, 255, 0.05); border-left: 4px solid #00f3ff; border-right: 4px solid #ff007f;">
+                <span style="color: #ff007f; font-size: 1.5rem;">„</span><em>Das Leben schreibt die besten Geschichten – und manchmal baut es uns eine kurze Verschnaufpause ein, damit wir danach mit doppelter Warp-Geschwindigkeit und voller Power gemeinsam durchstarten können! Das Beste an dieser Reise? Ganz klar: Ihr!</em><span style="color: #ff007f; font-size: 1.5rem;">“</span>
+            </p>
+            
+            <div class="vorwort-orbit-box" style="background: linear-gradient(135deg, rgba(0, 243, 255, 0.05), rgba(255, 0, 127, 0.05)); border: 1px solid rgba(0, 243, 255, 0.3); padding: 25px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);">
+                <h3 style="color: var(--space-cyan); margin-top: 0; font-size: 1.3rem;">Warum dieser Orbit strahlt! ⭐</h3>
+                <p>
+                    Manchmal schlägt das Leben eine spannende Kurve ein – und das ist die perfekte Gelegenheit, um dankbar zurückzublicken und mit einem fetten Lächeln nach vorne zu schauen! 
+                    Ich habe diese Seite als lebendiges, fröhliches Logbuch für uns erschaffen. Sie ist ein Ort zum Feiern all der genialen Meilensteine, unzähligen Lacher und der mega Energie, die wir als Team geteilt haben!
+                </p>
+                <p>
+                    <strong>Was wir gerockt haben:</strong> Wir haben nicht nur Code bezwungen und komplexe Logiken geknackt – wir haben aus wilden Code-Zeilen puren Spaß und echten Teamgeist gemacht! Jede gemeinsame Session war ein Highlight, bei dem gelacht wurde, bis die Server glühten. Diese Seite soll euch jeden Tag daran erinnern, was für eine fantastische Crew ihr seid. Die Ziellinie wartet schon auf uns!
+                </p>
+            </div>
+
+            <p style="font-size: 1.1rem; text-align: center; color: #f3f4f6;">
+                Wir haben in den vergangenen Wochen den Orbit erobert! Jeder virtuelle Kaffee, jeder gelöste Bug und jedes breite Grinsen im Gesicht hat diese Reise zu etwas ganz Besonderem gemacht. ✨
+            </p>
+        </section>
+
+
+        <section id="team">
+            <h2>Unsere legendäre Crew 👥✨</h2>
+            <p>Ein Team, das zusammen lacht, bezwingt jedes Universum! Ihr wart und seid mein absolutes Highlight auf dieser Reise.</p>
+            
+            <div class="team-grid">
+                
+                <div class="name-card" style="border-left: 3px solid var(--cyber-pink); background: rgba(255, 0, 127, 0.02);">
+                    <div class="avatar">⭐</div>
+                    <h3>David, Marvin & Stefan</h3>
+                    <p class="role">Die Chaos-Crew-Zentrale</p>
+                    <p class="personal-note">
+                        Ihr Drei seid absolute Spitzenklasse! Danke für den genialen Support, die unkomplizierte Hilfe und die großartige Stimmung. Egal wie knifflig der Code war, mit eurem grenzenlosen Optimismus und eurer tollen Art im Rücken hat jede Sekunde einfach nur mega Spaß gemacht! Ihr seid echte Raketen!
+                    </p>
+                </div>
+
+                <div class="name-card" style="border-left: 3px solid #ffb703; background: rgba(255, 183, 3, 0.02);">
+                    <div class="avatar">🍪</div>
+                    <h3>Ramona, Chris, Bendix & Lee</h3>
+                    <p class="role">Das Cookie-Crew-Squad</p>
+                    <p class="personal-note">
+                        Was für eine fantastische Truppe! Eure super positive Energie und die herzliche Art haben jeden digitalen Raum sofort zum Strahlen gebracht. Ihr habt mit eurer guten Laune und euren Lachern für die perfekte Würze gesorgt. Bleibt genau so lebensfroh und motiviert, ihr seid spitze! ❤️
+                    </p>
+                </div>
+
+                <div class="name-card">
+    <div class="avatar">📋</div>
+    <h3>Marcus Wunderle</h3>
+    <p class="role">Team-Manager / Backstage-Support</p>
+    <p class="personal-note">
+        Ein unendliches Danke für deinen großartigen Support im Hintergrund! Du hast unsere Anträge und organisatorischen Flugbahnen nie aus den Augen verloren und uns sicher durch jeden bürokratischen Sturm manövriert. Auf dich war immer absolut Verlass! 📋🛰️
+    </p>
+</div>
+
+                <div class="name-card">
+                    <div class="avatar">👑</div>
+                    <h3>Anna Hoff</h3>
+                    <p class="role">Team-Managerin (Modul 1)</p>
+                    <p class="personal-note">
+                        Danke für den absolut fantastischen und super motivierenden Start in Modul 1! Mit deiner ansteckend guten Laune und deiner engelsgleichen Geduld hast du uns jeden Tag begeistert. Du hast uns gezeigt, dass Programmieren richtig Spaß macht – danke für diese tolle Grundlage!
+                    </p>
+                </div>
+
+                <div class="name-card">
+                    <div class="avatar">📋</div>
+                    <h3>Kevin Kersten</h3>
+                    <p class="role">Team-Manager</p>
+                    <p class="personal-note">
+                        Ein riesiges Dankeschön für deinen tollen Einsatz! Egal was anstand, du hast die Herausforderungen im Hintergrund mit Bravour gemeistert und warst immer mit bester Laune, super Tipps und einer helfenden Hand für uns am Start. So macht Zusammenarbeit richtig Laune!
+                    </p>
+                </div>
+
+                <div class="name-card">
+                    <div class="avatar">🚀</div>
+                    <h3>Patrick Rosenbaum</h3>
+                    <p class="role">Support & Nachhilfe</p>
+                    <p class="personal-note">
+                        Du bist ein absoluter Motivationskünstler! Die Nachhilfe bei dir war extrem lehrreich, super strukturiert und hat dank deiner lockeren, positiven Art jedes Mal richtig viel Freude gemacht. Du hast komplexe Dinge einfach kinderleicht wirken lassen. Danke dir!
+                    </p>
+                </div>
+
+                <div class="name-card">
+                    <div class="avatar">🌌</div>
+                    <h3>Tammo Zelle</h3>
+                    <p class="role">Mentor & Feedback-Geber</p>
+                    <p class="personal-note">
+                        Vielen Dank für dein großartiges, inspirierendes und extrem wertvolles Feedback! Deine motivierenden Worte haben mir richtig viel Schwung gegeben und Lust auf neue Herausforderungen gemacht. Du hast das Talent, Menschen zu bestärken und mitzureißen!
+                    </p>
+                </div>
+
+                <div class="name-card">
+                    <div class="avatar">📡</div>
+                    <h3>Amir Mazhary</h3>
+                    <p class="role">Crew-Mitglied</p>
+                    <p class="personal-note">
+                        Es war mir eine absolute Freude, mit dir zusammenzuarbeiten! Deine clevere, fokussierte Art gepaart mit deiner super sympathischen Ausstrahlung hat unsere Runden jedes Mal bereichert. Danke für den tollen Austausch und die super gemeinsamen Meilensteine!
+                    </p>
+                </div>
+
+                <div class="name-card" style="border: 1px dashed var(--space-cyan);">
+                    <div class="avatar">🎭</div>
+                    <h3>Carlos Brockmann</h3>
+                    <p class="role">Entertainment & Information</p>
+                    <p class="personal-note">
+                        Der absolute Gute-Laune-Garant im Orbit! Vielen Dank für die unzähligen mega unterhaltsamen, extrem informativen und einfach unfassbar lustigen Gespräche. Du hast die perfekte Portion Humor reingebracht und uns alle jeden Tag aufs Neue zum Strahlen gebracht!
+                    </p>
+                </div>
+
+                <div class="name-card">
+                    <div class="avatar">⚡</div>
+                    <h3>Dominik Fischer</h3>
+                    <p class="role">Crew-Mitglied</p>
+                    <p class="personal-note">
+                        Gemeinsam mit dir auf Fehlersuche zu gehen, war kein Frust, sondern purer Spaß! Danke für deine super hilfsbereite, fröhliche Art und deinen unermüdlichen Teamgeist. Mit Kolleg*innen wie dir machen selbst die kniffligsten Aufgaben gute Laune!
+                    </p>
+                </div>
+
+                <div class="name-card">
+                    <div class="avatar">🧠</div>
+                    <h3>Katrin Bergmann</h3>
+                    <p class="role">Workshop-Leiterin</p>
+                    <p class="personal-note">
+                        Deine Workshops waren ein absolutes Highlight! Du hast die Themen mit so viel Freude, Klarheit und Begeisterung vermittelt, dass man gar nicht anders konnte, als mitzufiebern. Danke für diese tolle, positive und extrem lehrreiche Erfahrung!
+                    </p>
+                </div>
+
+                <div class="name-card" style="box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);">
+                    <div class="avatar">🏁</div>
+                    <h3>Steven Tanu</h3>
+                    <p class="role">Crew-Mitglied</p>
+                    <p class="personal-note">
+                        Deine positive Energie und deine Zielstrebigkeit stecken einfach an! Du hast den Blick immer optimistisch nach vorne gerichtet. Rockt Modul 3 mit Vollgas – ich freue mich schon riesig darauf, euch alle strahlend an der Ziellinie wiederzusehen!
+                    </p>
+                </div>
+
+                <div class="name-card">
+                    <div class="avatar">🛡️</div>
+                    <h3>Stefan Kallinich</h3>
+                    <p class="role">Crew-Mitglied / Mentaler Support</p>
+                    <p class="personal-note">
+                        Du hast das Herz am absolut rechten Fleck! Deine Empathie, dein offenes Ohr und dein fantastischer, optimistischer Support haben mir unendlich viel Kraft und ein breites Lächeln geschenkt. Menschen wie du machen die Welt (und jedes Team) um ein Vielfaches heller!
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="secret-log" class="secret-bonus-section">
+            <div class="secret-badge-header">✨ GEHEIMES MISSIONS-LOGBUCH FREIGESCHALTET ✨</div>
+            <h2>Für immer dankbar für diese Reise ✨</h2>
+            <p class="emotional-quote"><em>„Manchmal läuft das Leben nicht nach Plan, und man muss eine Pause einlegen, um später wieder mit voller Kraft durchzustarten. Aber das Schwierigste daran ist, Menschen wie euch zurückzulassen – wenn auch nur für kurze Zeit.“</em></p>
+            
+            <p>Es gibt Momente im Leben, da wird man von unerwarteten Ereignissen gezwungen, kurz innezuhalten, einen Schritt zurückzutreten und eine Pause einzulegen. Ein solcher Moment ist für mich leider genau jetzt gekommen. Schweren Herzens muss ich mich vorerst von euch verabschieden – doch ich gehe nicht mit dauerhafter Traurigkeit, sondern mit einem Herzen voller Stolz und unendlicher Dankbarkeit für das, was wir hier gemeinsam aufgebaut haben.</p>
+            
+            <p>Wenn ich auf unsere bisherige Zeit zurückblicke, sehe ich weit mehr als nur einen Kurs. Ich sehe eine intensive Reise, die uns alle verändert hat. Ihr seid keine zufällige Kursgruppe für mich. Ihr seid <strong>Familie auf Zeit</strong> geworden. Jeder Kaffee, jeder Fehler im Code, den wir zusammen gelöst haben, und jedes gemeinsame Lächeln hat sich tief in meine Erinnerung eingebrannt.</p>
+
+            <h3>Von der ersten Zeile Code bis in die Cloud 💻</h3>
+            <p>Gemeinsam haben wir uns durch die faszinierende, aber oft erbarmungslose Welt der <strong>Webentwicklung</strong> und des <strong>Webdesigns</strong> gekämpft. Wir haben gelernt, Oberflächen durch sauberes <strong>Engineering</strong> zum Leben zu erwecken, haben uns den Kopf über komplexen <strong>Programmiersprachen</strong> zerbrochen, Architekturen gebaut und uns tief in die Welten von <strong>DevOps</strong> und der <strong>AWS Core</strong>-Infrastruktur eingegraben.</p>
+            
+            <p>Ja, es gab sie – diese unzähligen <strong>Ohren-qualmenden Momente</strong>. Momente, in denen der Bildschirm nur so vor Fehlermeldungen strotzte, in denen die Logik einfach keinen Sinn ergeben wollte und die <strong>Verzweiflung</strong> so greifbar war, dass man am liebsten den Laptop zugeklappt hätte.</p>
+
+            <h3>Der Funke, der uns gerettet hat: Unser Team 👥</h3>
+            <p>In den Momenten der totalen Frustration passierte das Schönste überhaupt: Wir waren nie allein. Genau dann habe ich gemerkt, dass meine Teamkollegen manchmal einfach die besten Menschen sind, die man um sich haben kann. Ein kurzes Wort im Chat, ein gemeinsames Lachen über einen absurden Bug oder ein virtueller Schubs im richtigen Augenblick – ihr habt mich immer wieder aufgebaut, wenn die Luft raus war. Die Energie in unseren <strong>positiven Team-Projekten</strong> hat gezeigt, dass aus einer Gruppe von Individuen eine echte, eingeschworene Crew geworden ist. Wir haben nicht nur Code geteilt, sondern auch Nerven, Kaffee und echte Menschlichkeit.</p>
+
+            <h3>Unsere Dozenten: Die Kapitäne auf stürmischer See ⚓</h3>
+            <p>Diese Verbindung wäre niemals so stark geworden ohne unsere Dozenten. Sie waren für uns nie bloß Lehrkräfte, die starre Lehrpläne abarbeiten. Sie waren meine Mentoren, meine Ruhepole und die Brücke zwischen Theorie und echter Praxis. Mit unendlicher Geduld, tiefem Fachwissen und vor allem mit einer außergewöhnlichen menschlichen Wärme haben sie uns durch jeden Sturm manövriert. Sie haben an mich geglaubt, selbst wenn ich es selbst gerade überhaupt nicht konnte. Dafür danke ich euch von ganzem Herzen.</p>
+        </section>
+
+        <section id="wissen">
+            <h2>🚀 Mission Modul 3: Das Logbuch unseres Wissens</h2>
+            <p>Unsere Reise quer durch den Software-Kosmos war intensiv. Hier sind die Tech-Sektoren, die wir uns gemeinsam Untertan gemacht haben:</p>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>🐧 Sektor 1: Linux Advanced & Shell</h3>
+                    <p>Abgetaucht in die Tiefen des Betriebssystems. Wir haben gelernt, Benutzerrechte zu verwalten, Prozesse zu bändigen und uns optimal auf die Linux Essentials Zertifizierung vorzubereiten.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🐍 Sektor 2: Python Grundlagen</h3>
+                    <p>Die Basis unserer Programmierlogik. Algorithmen, Kontrollstrukturen, Fehlerhandling und objektorientierte Programmierung bilden nun das stabile Fundament unserer Triebwerke.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>⚡ Sektor 3: FastAPI & APIs</h3>
+                    <p>Moderne Web-Schnittstellen im Hyperantrieb. Wir haben gelernt, performante, asynchrone Backends aufzubauen, Requests zu verarbeiten und saubere API-Dokumentationen zu generieren.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🗄️ Sektor 4: Relationale Datenbanken</h3>
+                    <p>Datenstrukturen im Griff. Von Tabellendesigns, Primär- und Fremdschlüsseln bis hin zu komplexen Abfragen – unsere Daten liegen sicher verankert im Speicher.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>☁️ Sektor 5: AWS Cloud Infrastruktur</h3>
+                    <p>Grenzenlose Skalierbarkeit. Wir haben gelernt, wie globale Netzwerke, Cloud-Server und virtuelle Instanzen bei den Amazon Web Services (AWS) orchestriert und deployt werden.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🤖 Sektor 6: KI-Tools & Digitale Kompetenzen</h3>
+                    <p>Der Autopilot der Zukunft. Wir haben gelernt, modernste KI-Systeme und Large Language Models strategisch im Entwickler-Alltag einzusetzen, Prompts präzise zu steuern und Workflows durch digitale Assistenzsysteme drastisch zu beschleunigen.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🖥️ Sektor 7: Digitale Arbeitsumgebungen & Workspaces</h3>
+                    <p>Das Kontrollzentrum unserer Mission. Wir haben gelernt, verteilte Systeme, agile Kommunikationstools, cloudbasierte Dateistrukturen und Versionskontrollen wie Git effizient einzusetzen, um auch über Lichtjahre Entfernung hinweg nahtlos im Team zu kollaborieren.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🎨 Sektor 8: Webdesign & Webentwicklung (Frontend-Core)</h3>
+                    <p>Die visuelle Benutzeroberfläche unseres Raumschiffs. Das Erschaffen von responsiven, barrierefreien und visuell beeindruckenden Interfaces mittels HTML5, modernen CSS-Layouts (Grid & Flexbox) sowie interaktiver Logik, um Datenströme lebendig zu machen.</p>
+                </div>
+                <div class="skill-card wide-card">
+                    <h3>🏁 Sektor 9: Agile Projekt-Abschlussphase</h3>
+                    <p>Das Meisterstück! Wir haben all dieses Wissen gebündelt und unter echten Bedingungen ein Softwareprojekt im Team realisiert – gesteuert durch Scrum, Daily Standups und Sprints. Ein Beweis echter Team-Elite!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="route">
+            <h2>🚀 Unsere Galaktische Route: Missions-Logbuch</h2>
+            <p>Die Triebwerke glühen, die Datenströme sind stabil. Hier ist die exakte Flugbahn unserer Raumfähre:</p>
+            
+            <div class="mission-progress-container">
+                <span class="progress-label">🛰️ System-Status: 100% Orbit erreicht | Kurs: Ziellinie</span>
+                <div class="mission-progress-bar">
+                    <div class="mission-progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="route-timeline">
+                <div class="route-sector">
+                    <div class="sector-badge">🐧 Sektor 01</div>
+                    <div class="sector-content">
+                        <h3>Linux Grundlagen & Essentials Orbit</h3>
+                        <p class="sector-desc">Unser Einstieg in das Kontrollzentrum. Wir haben das Terminal gezähmt, Dateisysteme im Blindflug navigiert und Berechtigungen gesetzt.</p>
+                        <div class="skills-tags"><span>bash</span><span>chmod</span><span>ssh</span><span>grep</span><span>User Management</span></div>
+                        <div class="crew-transmission">
+                            <span class="transmission-sender">📡 Funkspruch von Missionsleiterin Marina:</span>
+                            <blockquote class="transmission-text">"Willkommen in der Welt von Linux! Jedes Kommando auf der CLI bringt uns näher an die Sterne." Danke, Marina, für den perfektem Einstieg!</blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="route-sector">
+                    <div class="sector-badge">🐍 Sektor 02</div>
+                    <div class="sector-content">
+                        <h3>Python Automatisierung & Backend-Strukturen</h3>
+                        <p class="sector-desc">Schreiben der primären Steuerungssoftware unseres Raumschiffs. Von Schleifen bis hin zu REST-Schnittstellen mit FastAPI.</p>
+                        <div class="skills-tags"><span>Python 3</span><span>FastAPI</span><span>SQLAlchemy</span><span>PostgreSQL</span></div>
+                        <div class="crew-transmission">
+                            <span class="transmission-sender">🔧 Taktischer Support – Copilot Patrick:</span>
+                            <blockquote class="transmission-text">Wenn der Code abstürzte, war Patrick zur Stelle. Deine Nachhilfe war die Rettung für die Triebwerke – so unheimlich viel ist hängen geblieben!</blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="route-sector">
+                    <div class="sector-badge">☁️ Sektor 03</div>
+                    <div class="sector-content">
+                        <h3>AWS Cloud Infrastruktur & Galaktische Skalierung</h3>
+                        <p class="sector-desc">Die Skalierung unseres Systems in die unendlichen Weiten des Netzwerks. Globale EC2-Server-Cluster aufsetzen und VPCs konfigurieren.</p>
+                        <div class="skills-tags"><span>AWS EC2</span><span>VPC Cloud</span><span>IAM Security</span><span>S3 Storage</span></div>
+                        <div class="crew-transmission">
+                            <span class="transmission-sender">🌌 Flotten-Zentrale – Koordinatorin Katrin:</span>
+                            <blockquote class="transmission-text">Für jede Frage offen, für jedes Anliegen ein Sicherheitsnetz. Katrin, deine Workshops waren eine Bereicherung für diesen Lebensabschnitt!</blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="route-sector">
+                    <div class="sector-badge">🖥️ Sektor 04</div>
+                    <div class="sector-content">
+                        <h3>Synchronisation digitaler Arbeitsumgebungen</h3>
+                        <p class="sector-desc">Einrichten und Optimieren unserer digitalen Workspaces. Koordination von asynchronen Arbeitsabläufen, Ticket-Systemen und versionierter Code-Verwaltung.</p>
+                        <div class="skills-tags"><span>Git & GitHub</span><span>Agile Tools</span><span>Cloud Workspaces</span><span>Linux Remote OS</span></div>
+                        <div class="crew-transmission">
+                            <span class="transmission-sender">📡 Funkspruch aus der Kommandozentrale:</span>
+                            <blockquote class="transmission-text">"Egal wie weit wir verstreut sind – unsere Arbeitsumgebung hält die Crew zusammen. Die perfekte Struktur für produktives Arbeiten im digitalen Raum!"</blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="route-sector">
+                    <div class="sector-badge">🎨 Sektor 05</div>
+                    <div class="sector-content">
+                        <h3>Webdesign & Galaktische Webentwicklung</h3>
+                        <p class="sector-desc">Das Gestalten und Programmieren moderner Web-Interfaces. Hier schlägt mein Herz am höchsten – das Erschaffen interaktiver Erlebnisse direkt im Browser.</p>
+                        <div class="skills-tags"><span>HTML5 / CSS3</span><span>Flexbox & Grid</span><span>UI/UX Design</span><span>DOM Manipulation</span></div>
+                        <div class="crew-transmission">
+                            <span class="transmission-sender">✨ Logbucheintrag (Mein Traum):</span>
+                            <blockquote class="transmission-text">"Hier brennt mein Herz! Webentwicklung ist genau das, was ich machen will. Das Erschaffen von Code, den man nicht nur fühlt, sondern auch sieht und bedient."</blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="route-sector final-sector">
+                    <div class="sector-badge">🏁 Sektor 06</div>
+                    <div class="sector-content">
+                        <h3>Die Ziellinie: Das Abschluss-Projekt & Feedback</h3>
+                        <p class="sector-desc">Zusammenführung aller Teilsysteme zu einer funktionierenden Raumstation unter echten Projektbedingungen.</p>
+                        <div class="skills-tags"><span>Full-Stack Integration</span><span>Live Deployment</span><span>Scrum Sprint</span></div>
+                        <div class="crew-transmission">
+                            <span class="transmission-sender">🎤 Flotten-Auditor – Mentor Tammo:</span>
+                            <blockquote class="transmission-text">Das wertvolle Feedback zu den Präsentationen war der Treibstoff für das Finale. Tammo, deine Worte haben mir unheimlich viel Mut geschenkt!</blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="story">
+            <h2>🤍 Mein unsichtbarer Kampf & Warum ich diese Pause brauche</h2>
+            <p>Viele von euch haben nicht geahnt, wie schwer der unsichtbare Rucksack war, den ich jeden Morgen mit in den Kurs gebracht habe. Der tägliche, leise Kampf gegen die Schatten von <strong>PTBS (Posttraumatischen Belastungsstörung)</strong>, <strong>sozialen Ängsten</strong> und <strong>Depressionen</strong> ist unendlich kräfteraubend. Wenn dann das eigene Leben im privaten Raum von plötzlicher, erschütternder Gewalt, Polizeieinsätzen und einem schmerzhaften Sorgerechtsstreit zerrissen wird, zieht es einem endgültig den Boden unter den Füßen weg. Nach einem zweiten, schnellen Polizeieinsatz habe ich die Reißleine gezogen und mich endgültig von meinem Ex-Partner getrennt.</p>
+            
+            <p>Zu all dem emotionalen Ballast kommt nun auch noch der bürokratische Druck von außen: <strong>Die Agentur verlangt von mir, dass ich eine Pause einlegen, um mich auf dem Arbeitsmarkt umzusehen.</strong> Wenn sich in den nächsten zwei Monaten auf dem Arbeitsmarkt nichts ergibt, soll ich erst danach wieder in Modul 3 einsteigen.</p>
+            
+            <p>Ich will ehrlich zu euch sein: <strong>Das alles macht für mich kaum Sinn und fühlt sich unglaublich schwer an, da mein Ziel die Webentwicklung ist.</strong> Es ist das, was ich machen will, das, wofür mein Herz brennt! Diese erzwungene Schleife drehen zu müssen, fühlt sich an wie ein schmerzhafter Schritt zurück.</p>
+            
+            <p>Doch genau in all dieser Dunkelheit ist auch ein echtes Wunder passiert. Eine ganz besondere person aus meinem Umfeld hat mich gefunden. Sie ist seither ununterbrochen an meiner Seite, stützt mich bedingungslos, fängt mich auf und zeigt mir jeden Tag, dass es sich lohnt, für die eigene Heilung und die eigenen Träume zu kämpfen. Dieser einen Person verdanke ich heute in so vielen Dingen mein Leben.</p>
+            
+            <p>Diese Pause ist kein Aufgeben – sie ist mein Anlauf, um gesund zu werden und gestärkt zurückzukommen. Danke für euer tiefes Verständnis und euer Mitgefühl! ❤️</p>
+        </section>
+
+        <section id="team">
+            <h2> ✮⋆˙☆  Ein großes Danke an jeden von euch!  ☆˙⋆✮</h2>
+            <p>Jeder von euch hat dieses Team einzigartig gemacht. Ich werde euch unglaublich vermissen (Bewege deine Maus über die Karten ✨):</p>
+            
+            ﾟ　⟡　　　'⠀　　⠀   　⠀. ⠀        '                          .
+ 𝑳𝒊𝒈𝒉𝒕 𝒕𝒉𝒆 𝒔𝒕𝒂𝒓𝒔　,　　　　⟡　　　.                   .
+ ⠀.  ⠀𝑻𝒉𝒆𝒚 𝒔𝒐𝒖𝒏𝒅 𝒍𝒊𝒌𝒆 𝒚𝒐𝒖⠀⠀⠀⠀'⠀⠀⠀⠀⠀⠀⠀⠀'⠀⠀   　ﾟ
+　　　　　　*　　　　　　    　' 　　　.
+ .　　      　  𝒔𝒉𝒊𝒏𝒆 𝒔𝒐 𝒃𝒓𝒊𝒈𝒉𝒕　　　. 　           　⟡⠀　  * 　
+        ,               　𝒕𝒉𝒆𝒚 𝒂𝒍𝒘𝒂𝒚𝒔 𝒅𝒐　　　,
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀.　　　　　 　　⠀　　　⠀.　
+                '                      𝒍𝒆𝒕 𝒎𝒆 𝒐𝒖𝒕⠀  　　,　　            .
+ 　*   　　𝒕𝒐 𝒓𝒆𝒂𝒄𝒉 𝒕𝒉𝒆 𝒘𝒐𝒓𝒍𝒅　　　　.                      .
+　　　　　　*⠀　　⠀  　⠀⟡⠀　          *
+   '       𝒘𝒉𝒚 𝒅𝒐 𝒚𝒐𝒖 𝒏𝒐𝒕　　　*　　 　　　.            '
+ 𝒔𝒆𝒆 𝒊𝒕 𝒕𝒐𝒐?　　.　　.　　　　　　.                         .
+⟡　˚　　　ﾟ　　　　　.           　ﾟ                '              ⟡
+
+            <h2>Die ChaosCrew 👥</h2>
+            <p>Ein Team ist weit mehr als die Summe seiner Programmierzeilen. Ihr wart mein verlässlicher Kompass in diesem digitalen Universum, habt Code bezwungen und jede Hürde mit einem Lächeln genommen.</p>
+            
+            <div class="team-grid">
+                <div class="name-card">
+                    <div class="avatar">⭐</div>
+                    <h3>Marvin, David & Stefan</h3>
+                    <p class="role">ChaosCrew-Zentrale</p>
+                    <p class="personal-note">
+                        Ein unendliches Danke für euren unermüdlichen Support im System! Ihr wart in den Momenten zur Stelle, in denen der Code gestreikt hat und ich selbst am Zweifeln war. Euer Beistand bleibt unvergessen und fest in meiner eigenen Matrix verankert.
+                    </p>
+                </div>
+
+                <div class="name-card">
+                    <div class="avatar">🍪</div>
+                    <h3>Ramona, Chris, Bendix, Daniel, Lee Stephen</h3>
+                    <p class="role">CookieCrew-Squad</p>
+                    <p class="personal-note">
+                        Danke für die unvergessliche Energie im CookieCrew-Squad! Ihr habt es geschafft, mit eurer herzlichen Art, unzähligen Lachern und purer Motivation jeden noch so grauen, digitalen Raum im Orbit in Sekundenschnelle zum Strahlen zu bringen. ❤️
+                    </p>
+                </div>
+
+                <div class="name-card">
+                    <div class="avatar">📋</div>
+                    <h3>Marcus</h3>
+                    <p class="role">Team-Manager</p>
+                    <p class="personal-note">
+                        Vielen Dank für deinen unermüdlichen Einsatz im Hintergrund. Du hast unsere Anträge und bürokratischen Flugbahnen niemals aufgegeben und jeden Tag aufs Neue harte Herausforderungen für uns gemeistert, um den Kurs zu halten.
+                    </p>
+                </div>
+
+                <div class="name-card">
+                    <div class="avatar">📋</div>
+                    <h3>Kevin</h3>
+                    <p class="role">Team-Manager</p>
+                    <p class="personal-note">
+                        Auch wenn die kosmischen Bedingungen und viele Situationen in letzter Zeit absolut nicht leicht oder kompliziert waren: Du warst als Fels in der Brandung stets mit gutem Rat, ehrlichen Worten und tatkräftiger Hilfe zur Stelle. Danke!
+                    </p>
+                </div>
+
+                <div class="name-card">
+                    <div class="avatar">🧠</div>
+                    <h3>Katrin</h3>
+                    <p class="role">Workshop-Leiterin</p>
+                    <p class="personal-note">
+                        Egal wie komplex die Materie war: Für Fragen konntest du Türen öffnen. Deine Workshops waren eine unfassbar strukturierte, lehrreiche und tolle Erfahrung, die mich in diesem Lebensabschnitt nachhaltig prägen wird.
+                    </p>
+                </div>
+
+                <div class="name-card">
+                    <div class="avatar">🚀</div>
+                    <h3>Patrick</h3>
+                    <p class="role">Support & Nachhilfe</p>
+                    <p class="personal-note">
+                        Du hast mir bei der Nachhilfe und dem Verstehen komplexer Logiken so unglaublich gut und geduldig geholfen. Das vermittelte Wissen und deine logischen Kniffe sind dauerhaft im Speicher meines internen Systems eingebrannt!
+                    </p>
+                </div>
+
+                <div class="name-card">
+                    <div class="avatar">🌌</div>
+                    <h3>Tammo</h3>
+                    <p class="role">Mentor</p>
+                    <p class="personal-note">
+                        Ein herzliches Dankeschön für dein wertvolles, ehrliches und konstruktives Feedback zu unseren Präsentationen. Deine treffenden Worte haben mir in den richtigen Momenten echten Mut geschenkt und mich weitergebracht.
+                    </p>
+                </div>
+
+                <div class="name-card">
+                    <div class="avatar">👑</div>
+                    <h3>Anna Hoff</h3>
+                    <p class="role">Team-Managerin</p>
+                    <p class="personal-note">
+                        Vielen Dank für den perfekten Start in Modul 1! Du hast eine Geduld aus absolutem Stahl bewiesen, hast trotz anstrengender Vorträge nie aufgegeben und mir in Momenten geholfen, in denen ich den Wald vor lauter Bäumen nicht sah.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="cinema">
+            <h2>Unsere Momente 🎬</h2>
+            <p>Ein kleiner filmischer Rückblick an unsere unvergesslichen Tage, Sessions und lachenden Gesichter im Orbit.</p>
+            
+            <div class="cyber-border-wrapper">
+                <div class="cinema-screen">
+                    <img src="bilder/Kevin Kersten.jpg" alt="Moment 1" class="cinema-slide active">
+                    <img src="bilder/Anna Hoff.jpg" alt="Moment 2" class="cinema-slide">
+                    <img src="bilder/Marcus Wunderle.jpg" alt="Moment 3" class="cinema-slide">
+                    <img src="Images/Patrick Rosenbaum.jpg alt="Moment 4" class="cinema-slide">
+                    <img src="Images/Katrin Bergmann.jpg" alt="Moment 5" class="cinema-slide">
+                    <img src="Images/Tammo Zelle.jpg" alt="Moment 6" class="cinema-slide">
+                    <img src="Images/Marvin Kurmanowski.jpg" alt="Moment 7" class="cinema-slide">
+                    <img src="Images/Amir Mazhary.jpg" alt="Moment 8" class="cinema-slide">
+                    <img src="Images/Baraa Hejazi.jpg" alt="Moment 9" class="cinema-slide">
+                    <img src="Images/Bendix Steffen.jpg" alt="Moment 10" class="cinema-slide">
+                    <img src="Images/Carlos Brockmann.jpg" alt="Moment 11" class="cinema-slide">
+                    <img src="Images/Chris Jahn.jpg" alt="Moment 12" class="cinema-slide">
+                    <img src="Images/Dominik Fischer.jpg" alt="Moment 13" class="cinema-slide">
+                    <img src="Images/Its me.jpg" alt="Moment 14" class="cinema-slide">
+                    <img src="Images/Lee Stephen Dale.jpg" alt="Moment 15" class="cinema-slide">
+                    <img src="Images/Ramona Eichert.jpg" alt="Moment 16" class="cinema-slide">
+                    <img src="Images/Stefan Kallinich.jpg" alt="Moment 17" class="cinema-slide">
+                    <img src="Images/Steven Tanu.jpg" alt="Moment 18" class="cinema-slide">
+
+                    <div class="cinema-caption" id="cinema-caption-text">
+                        Das Echo unserer ChaosCrew ✨
+                    </div>
+                    <img src="Images/Lustiges-GruppenFoto.jpeg" alt="Gruppenfoto des Teams" style="width: 100%; height: auto;">
+                    
+                </div>
+            </div>
+
+            </section>
+
+        <section id="guestbook">
+            <h2>📌 Eure Spuren in meinem Herzen</h2>
+            <p>Bevor ich mich in meine kurze Pause verabschiede, möchte ich dich bitten: Hinterlass mir ein paar Worte auf dieser digitalen Pinnwand!</p>
+            
+            <div class="guestbook-container">
+                <textarea id="note-text" placeholder="Schreib mir etwas Schönes ins Herz..."></textarea>
+                <button class="submit-btn effect-btn" onclick="addMessageFromForm()">Nachricht abschicken</button>
+            </div>
+
+            <h3>Bisherige Nachrichten:</h3>
+            <div id="messages-list"></div>
+        </section>
+
+        <section id="tools">
+            <h2>⏳ Mein Countdown bis zu Modul 3</h2>
+            <p>Die Zeit läuft, bis wir hoffentlich wieder gemeinsam im Kurs sitzen:</p>
+            <div class="countdown-container">
+                <div class="time-box"><span id="days">60</span>Tage</div>
+                <div class="time-box"><span id="hours">00</span>Stunden</div>
+                <div class="time-box"><span id="minutes">00</span>Minuten</div>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="tear-jerker-overlay" class="emotional-overlay" style="display: none;">
+        <div class="emotional-content">
+            <h2>✨ Das Logbuch des Herzens ✨</h2>
+            <p style="color: #9ca3af; margin-bottom: 20px; font-weight: bold; text-align: center;">
+                💡 Klicke auf ein Crew-Mitglied, um die persönliche Nachricht freizuschalten:
+            </p>
+            
+            <div class="crew-dossiers">
+                <div class="crew-star-node" onclick="revealDossier('text-marvin-david-stefan')">
+                    <h3>✦ Chaos-Crew-Mitglied: Marvin, David & Stefan ⭐</h3>
+                    <p id="text-marvin-david-stefan" class="dossier-text" style="display:none;" data-text="Lieber Marvin, David & Stefan: Danke für euren unermüdlichen Support. Ihr habt mir in Momenten geholfen, in denen ich selbst gezweifelt habe. Das werde ich euch niemals vergessen.⭐"></p>
+                </div>
+
+                <div class="crew-star-node" onclick="revealDossier('text-ramona')">
+                    <h3>✦ Cookie-Crew-Mitglied: Ramona, Chris, Bendix, Daniel, Lee Stephen 🍪</h3>
+                    <p id="text-ramona" class="dossier-text" style="display:none;" data-text="Liebe Ramona, Chris, Bendix, Daniel & Lee Stephen: Danke für alles in der CookieCrew! Ihr habt immer ein Lächeln in den Raum gezaubert. ❤️"></p>
+                </div>
+
+                <div class="crew-star-node" onclick="revealDossier('text-marcus')">
+                    <h3>✦ Team-Manager: Marcus 📋</h3>
+                    <p id="text-marcus" class="dossier-text" style="display:none;" data-text="Lieber Marcus: Du hast unsere Anträge nie aufgegeben und jeden Tag neue Herausforderungen für uns gemeistert. Danke!"></p>
+                </div>
+
+                <div class="crew-star-node" onclick="revealDossier('text-kevin')">
+                    <h3>✦ Team-Manager: Kevin 📋</h3>
+                    <p id="text-kevin" class="dossier-text" style="display:none;" data-text="Lieber Kevin: Auch wenn viele Situationen in letzter Zeit schwierig waren, warst du dennoch stets mit Rat und Tat zur Stelle."></p>
+                </div>
+
+                <div class="crew-star-node" onclick="revealDossier('text-katrin')">
+                    <h3>✦ Workshop-Leiterin: Katrin 🧠</h3>
+                    <p id="text-katrin" class="dossier-text" style="display:none;" data-text="Liebe Katrin: Für Fragen konnte man immer auf dich zukommen. Die Workshops waren eine tolle Erfahrung in meinem Lebensabschnitt."></p>
+                </div>
+
+                <div class="crew-star-node" onclick="revealDossier('text-patrick')">
+                    <h3>✦ Support und Nachhilfe: Patrick 🚀</h3>
+                    <p id="text-patrick" class="dossier-text" style="display:none;" data-text="Lieber Patrick: Du hast mir bei der Nachhilfe so unglaublich gut geholfen. Es bleibt fest im Speicher eingebrannt. Vielen Dank!"></p>
+                </div>
+
+                <div class="crew-star-node" onclick="revealDossier('text-tammo')">
+                    <h3>✦ Mentor: Tammo 🌌</h3>
+                    <p id="text-tammo" class="dossier-text" style="display:none;" data-text="Lieber Tammo: Vielen herzlichen Dank für dein wertvolles Feedback zu den Präsentationen. Deine Worte haben mir Mut geschenkt."></p>
+                </div>
+
+                <div class="crew-star-node" onclick="revealDossier('text-Anna')">
+                    <h3>✦ Team-Manager: Anna Hoff 👑</h3>
+                    <p id="text-Anna" class="dossier-text" style="display:none;" data-text="Liebe Anna: Vielen Dank für Modul 1! Du hast mir in so vielen Momenten geholfen, in denen ich längst verzweifelt war. Du hast trotz anstrengender Vorträge nie aufgegeben und jeden Tag neue Herausforderungen für uns gemeistert."></p>
+                </div>
+            </div>
+
+            <p class="final-overlay-statement">
+                Ich komme wieder. Versprochen. <br>Besteht Modul 3 für mich mit – wir sehen uns an der Ziellinie! Danke für alles!
+            </p>
+            
+            <button class="close-overlay-btn effect-btn" onclick="closeOverlay()">Schließen & Musik zurücksetzen</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
